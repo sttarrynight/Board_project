@@ -47,7 +47,7 @@ public class Main {
 		int userId = currentUser.getUser_id();
 		String username = currentUser.getUsername();
 		
-		//BoardController boardController = new BoardController();
+		BoardController boardController = new BoardController(sc);
 		//CommentController commentController = new CommentController();
 		
 		while(true) {
@@ -55,9 +55,18 @@ public class Main {
 			int job = CommonUtil.getInt("선택>> ");
 			
 			switch(job) {
-				case 1 -> {  }
-				case 2 -> {  }
-				case 3 -> {  }
+				case 1 -> { 
+					//1. 게시글 조회 
+					boardController.boardViewMenu(currentUser);
+				}
+				case 2 -> { 
+					//2. 게시글 작성
+					boardController.createBoard(currentUser);
+				}
+				case 3 -> { 
+					//3. 나의 게시글
+					boardController.myBoardMenu(currentUser);
+				}
 				case 4 -> {  }
 				case 5 -> { 
 					boolean deleted = memberController.MemberInfoMenu(userId);
