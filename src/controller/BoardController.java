@@ -70,7 +70,7 @@ public class BoardController {
         int sel = Integer.parseInt(sc.nextLine());
         if (sel == 1) {
             // TODO: CommentController 연동
-            System.out.println("[알림] 댓글 작성 기능은 CommentController와 연동 필요");
+        	CommentController.writeComment(id);
         }
     }
 
