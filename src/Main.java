@@ -2,6 +2,7 @@
 import java.util.Scanner;
 
 import controller.MemberController;
+import controller.CommentController;
 import model.dto.MemberDTO;
 import util.CommonUtil;
 
