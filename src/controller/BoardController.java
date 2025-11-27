@@ -70,7 +70,7 @@ public class BoardController {
         int sel = Integer.parseInt(sc.nextLine());
         if (sel == 1) {
             // TODO: CommentController 연동
-        	CommentController.writeComment(id);
+        	CommentController.writeComment(user.getUser_id(), id);
         }
     }
 
