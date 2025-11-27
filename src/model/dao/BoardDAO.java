@@ -122,8 +122,9 @@ public class BoardDAO {
                     rs.getInt("board_id"),
                     rs.getString("title"),
                     rs.getString("content"),
-                    rs.getDate("created_at"),
-                    rs.getDate("updated_at"),
+             
+                    rs.getTimestamp("created_at"),
+                    rs.getTimestamp("updated_at"),
                     rs.getInt("user_id"),
                     rs.getString("username")
                 );
@@ -227,7 +228,7 @@ public class BoardDAO {
     public void insert(BoardDTO dto) {
         String sql = """
             INSERT INTO board (board_id, title, content, created_at, user_id)
-            VALUES (seq_board.nextval, ?, ?, SYSDATE, ?)
+            VALUES (seq_board.nextval, ?, ?, SYSTIMESTAMP, ?)
         """;
 
         try (
@@ -250,7 +251,7 @@ public class BoardDAO {
     public boolean update(BoardDTO dto) {
         String sql = """
             UPDATE board
-            SET title = ?, content = ?, updated_at = SYSDATE
+            SET title = ?, content = ?, updated_at = SYSTIMESTAMP
             WHERE board_id = ? AND user_id = ?
         """;
 

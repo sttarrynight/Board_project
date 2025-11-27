@@ -3,6 +3,7 @@ package view;
 import java.util.List;
 import model.dto.BoardDTO;
 import model.dto.CommentDTO;
+import util.CommonUtil;
 
 public class BoardView {
 
@@ -73,8 +74,9 @@ public class BoardView {
         System.out.println("제목: " + board.getTitle());
         System.out.println("내용: " + board.getContent());
         System.out.println("작성자: " + board.getUsername());
-        System.out.println("작성일: " + (board.getCreated_at()));
-        System.out.println("수정일: " + (board.getUpdated_at() != null ? board.getUpdated_at() : "-"));
+        System.out.println("작성일: " + CommonUtil.formatDate(board.getCreated_at()));
+        System.out.println("수정일: " + (board.getUpdated_at() != null ?
+                CommonUtil.formatDate(board.getUpdated_at()) : "수정 없음"));
 
         System.out.println("----------------- 댓글 -----------------");
         if (comments == null || comments.isEmpty()) {
