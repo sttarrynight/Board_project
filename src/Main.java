@@ -67,7 +67,7 @@ public class Main {
 					//3. 나의 게시글
 					boardController.myBoardMenu(currentUser);
 				}
-				case 4 -> { CommentController.startCommentManagement(); }
+				case 4 -> { CommentController.startCommentManagement(userId); }
 				case 5 -> { 
 					boolean deleted = memberController.MemberInfoMenu(userId);
 					if(deleted) {
