@@ -1,5 +1,6 @@
 package util;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -50,6 +51,14 @@ public class CommonUtil {
 		}
 		return sdf.format(date);
 	}
+	
+	public static String formatDate(Timestamp timestamp ) {
+		if(timestamp ==null) {
+			return "";
+		}
+		return sdf.format(timestamp);
+	}
+	
 	
 	//문자열 자르기 (출력 정렬용 - 리스트)
 	public static String truncate(String str, int maxLength) {
