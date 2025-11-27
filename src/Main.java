@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 
+import controller.BoardController;
 import controller.MemberController;
 import controller.CommentController;
 import model.dto.MemberDTO;
@@ -54,9 +55,18 @@ public class Main {
 			int job = CommonUtil.getInt("선택>> ");
 			
 			switch(job) {
-				case 1 -> {  }
-				case 2 -> {  }
-				case 3 -> {  }
+				case 1 -> { 
+					//1. 게시글 조회 
+					boardController.boardViewMenu(currentUser);
+				}
+				case 2 -> { 
+					//2. 게시글 작성
+					boardController.createBoard(currentUser);
+				}
+				case 3 -> { 
+					//3. 나의 게시글
+					boardController.myBoardMenu(currentUser);
+				}
 				case 4 -> { CommentController.startCommentManagement(); }
 				case 5 -> { 
 					boolean deleted = memberController.MemberInfoMenu(userId);

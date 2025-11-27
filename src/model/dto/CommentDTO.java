@@ -27,7 +27,7 @@ public class CommentDTO {
 	private Integer board_id; //FK
 	@NonNull
 	private Integer user_id; //FK
-	
+
+	@NonNull
 	private String username;
-	
 }
