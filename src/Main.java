@@ -1,11 +1,11 @@
 
 import java.util.Scanner;
 
-import controller.MemberController;
 import controller.BoardController;
+import controller.MemberController;
+import controller.CommentController;
 import model.dto.MemberDTO;
 import util.CommonUtil;
-
 
 public class Main {
 	
@@ -47,8 +47,8 @@ public class Main {
 		int userId = currentUser.getUser_id();
 		String username = currentUser.getUsername();
 		
-		BoardController boardController = new BoardController(sc);
-		//CommentController commentController = new CommentController();
+		//BoardController boardController = new BoardController();
+		CommentController commentController = new CommentController();
 		
 		while(true) {
 			showMainMenu(username);
@@ -67,7 +67,7 @@ public class Main {
 					//3. 나의 게시글
 					boardController.myBoardMenu(currentUser);
 				}
-				case 4 -> {  }
+				case 4 -> { CommentController.startCommentManagement(); }
 				case 5 -> { 
 					boolean deleted = memberController.MemberInfoMenu(userId);
 					if(deleted) {

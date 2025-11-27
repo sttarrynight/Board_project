@@ -2,17 +2,18 @@ package model.dto;
 
 import java.util.Date;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-@ToString
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter @Setter
+@Builder
+@ToString
 public class CommentDTO {
 
 	@NonNull
@@ -26,6 +27,7 @@ public class CommentDTO {
 	private Integer board_id; //FK
 	@NonNull
 	private Integer user_id; //FK
+
 	@NonNull
-	private String username; //FK
+	private String username;
 }
