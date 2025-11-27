@@ -47,7 +47,7 @@ public class Main {
 		String username = currentUser.getUsername();
 		
 		//BoardController boardController = new BoardController();
-		//CommentController commentController = new CommentController();
+		CommentController commentController = new CommentController();
 		
 		while(true) {
 			showMainMenu(username);
@@ -57,7 +57,7 @@ public class Main {
 				case 1 -> {  }
 				case 2 -> {  }
 				case 3 -> {  }
-				case 4 -> {  }
+				case 4 -> { CommentController.startCommentManagement(); }
 				case 5 -> { 
 					boolean deleted = memberController.MemberInfoMenu(userId);
 					if(deleted) {
