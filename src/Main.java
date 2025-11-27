@@ -2,8 +2,10 @@
 import java.util.Scanner;
 
 import controller.MemberController;
+import controller.BoardController;
 import model.dto.MemberDTO;
 import util.CommonUtil;
+
 
 public class Main {
 	

@@ -2,6 +2,7 @@ package model.dto;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -12,6 +13,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Getter @Setter
 public class BoardDTO {
 
@@ -26,4 +28,6 @@ public class BoardDTO {
 	private Date updated_at;
 	@NonNull
 	private Integer user_id; //FK
+	@NonNull
+	private String username; 
 }
