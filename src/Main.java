@@ -47,7 +47,7 @@ public class Main {
 		int userId = currentUser.getUser_id();
 		String username = currentUser.getUsername();
 		
-		//BoardController boardController = new BoardController();
+		BoardController boardController = new BoardController(sc);
 		CommentController commentController = new CommentController();
 		
 		while(true) {
